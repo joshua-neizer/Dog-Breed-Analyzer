@@ -52,7 +52,7 @@
                     <div style="padding-left: 0px; padding: 25px 0px 0px 20px; float: left; color: black; font-weight: bold; font-size: 40px;">Dog ML Model.</div> 
                     <table class="tb">
                         <tr>
-                            <td class="titlebar"><a class ="titlebar" href="http://192.168.2.64/.MLApp">Home</a></td>
+                            <td class="titlebar"><a class ="titlebar" href="http://localhost/.MLApp">Home</a></td>
                             <td class="titlebar"><a class ="titlebar" href="#two">Results</a></td>
                             <td class="titlebar"><a class ="titlebar" href="#one">Top</a></td>
                         </tr>
@@ -111,7 +111,7 @@
                     }
                 }
 
-                $server['ip'] = "192.168.2.64"; 	// IP des Servers
+                $server['ip'] = "localhost"; 	// IP des Servers
                 $server['sshport'] = 22;   		// SSH Port (Standart: 22)
                 $server['user'] = "pi"; 		// Benutzername
                 $server['pw'] = "room355"; 		// Passwort des Benutzers
