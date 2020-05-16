@@ -1,0 +1,504 @@
+html{
+    background-color: white;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body{
+    margin: -2px 0px -2px -2px;
+    font-family:'Roboto', sans-serif;
+    font-weight: lighter;
+    width: 100%;
+    overflow-x: hidden;
+    background: url(http://papers.co/wallaper/papers.co-ae29-os-x-yosemite-mac-apple-black-white-mountain-36-3840x2400-4k-wallpaper.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+div.main{
+    background-image: url(g10Md00.jpg);
+    background-size: cover !important;
+    width: 101%;
+    height: 100px;
+    margin: 0 auto;
+    align-items: center;
+    background-attachment: fixed;
+    background-position: 100% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    -webkit-transition: all .5s ease-in-out;
+		   -moz-transition:  all .5s ease-in-out;
+		    -ms-transition:  all .5s ease-in-out;
+		     -o-transition:  all .5s ease-in-out;
+		        transition:  all .5s ease-in-out;
+}
+
+button:focus {outline:0;}
+
+#top{
+    
+    position: fixed;
+    background-size: cover !important;
+    width: 101%;
+    height: 100px;
+    margin: 0 auto;
+    align-items: center;
+    background-attachment: fixed;
+    background-position: 100% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgba(255, 255, 255, 0);
+    -webkit-transition: all .5s ease-in-out;
+		   -moz-transition:  all .5s ease-in-out;
+		    -ms-transition:  all .5s ease-in-out;
+		     -o-transition:  all .5s ease-in-out;
+		        transition:  all .5s ease-in-out;
+
+}
+
+div.spacing{
+    padding-top: 90px;
+}
+
+div.mainContainer{
+    margin: auto;
+    width: 100%;
+    height: 90vh;
+    text-align: center;
+    padding-top: 100px;
+}
+
+p.title{
+    color: white;
+    font-family: Segoe UI, Helvetica Neue;
+    text-align: center;
+    font-size: 90px;
+    font-weight: lighter;
+    margin: auto;
+    letter-spacing: 5px;
+    border-width: 1px;
+    height: 140px;
+    width:  900px;
+    font-weight: lighter;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+p.subtitle{
+    font-style: italic;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+p.start{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+    border:solid thick black;
+    padding-top: 60px;
+    border-width: 1px;
+    height: 90px;
+    width: 150px;
+    border-radius: 6em;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+p.startTitle{
+    color: rgb(100, 100, 100);
+    text-align: center;
+    font-size: 21px;
+    margin: auto;
+    margin-top: 30px;
+    padding-top: 22px;
+    border:solid thick white;
+    border-width: 2px;
+    height: 55px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.0);
+    font-weight: lighter; 
+    -webkit-transition: all .2s ease-in-out;
+		   -moz-transition:  all .2s ease-in-out;
+		    -ms-transition:  all .2s ease-in-out;
+		     -o-transition:  all .2s ease-in-out;
+		        transition:  all .2s ease-in-out;
+}
+
+p.startTitle:hover{
+        background-color: rgba(255, 255, 255, 0.5)
+}
+
+div #bannercover {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 105vh;
+    align-content: center;
+}
+     
+     div #banner {
+        height: 100%;    
+}
+     
+     #banner-wrap{
+    width: 100%;
+}
+
+table.tb{
+    font-weight: lighter;
+    font-size: 16px;
+    color: black;
+    vertical-align: middle;
+    float:right;
+    padding-top: 35px;
+    padding-right: 30px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+#titlebar{
+    width: 100%;
+    height: 65px;
+    background-color: rgba(100, 100, 100, 0);
+    float: right;
+    position: relative;
+    margin-top: -3px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0);
+}
+
+td.titlebar{
+    color: black;
+    width: 140px;
+    height: 25px;
+    text-align: center;
+}
+
+a.titlebar:visited, a.titlebar:link{
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 30px 15px 30px;
+    margin: 5px 0px 0px 10px;
+    height: 37.5px;
+    width: 100%;
+    font-weight: lighter;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: solid 2px black;
+    border-color: rgba(0, 0, 0, 0);
+    color: black;
+}
+
+a.start:visited, a.start:link{
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+
+button.titlebar{
+    font-family: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 30px 15px 30px;
+    margin: 0px 0px 0px 10px;
+    height: 60px;
+    width: 275px;
+    font-weight: lighter;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: solid 2px black;
+    border-color: rgba(0, 0, 0, 0);
+    color: black;
+    
+    -webkit-transition: all .2s ease-in-out;
+		   -moz-transition:  all .2s ease-in-out;
+		    -ms-transition:  all .2s ease-in-out;
+		     -o-transition:  all .2s ease-in-out;
+		        transition:  all .2s ease-in-out;
+}
+
+button.titlebar:hover{
+    color: black;
+    background-color: rgba(255, 255, 255, 1 );
+    border-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+
+a.titlebar{
+    -webkit-transition: color .2s ease-in-out;
+		   -moz-transition:  color .2s ease-in-out;
+		    -ms-transition:  color .2s ease-in-out;
+		     -o-transition:  color .2s ease-in-out;
+		        transition:  color .2s ease-in-out;
+    
+    -webkit-transition: background-color .2s ease-in-out;
+		   -moz-transition:  background-color .2s ease-in-out;
+		    -ms-transition:  background-color .2s ease-in-out;
+		     -o-transition:  background-color .2s ease-in-out;
+		        transition:  background-color .2s ease-in-out;
+    
+}
+
+a.titlebar:hover{
+    color: black;
+    background-color: rgba(255, 255, 255, 1 );
+    border-color: rgba(0, 0, 0, 1);
+    
+}
+
+a.start{
+     -webkit-transition: color .2s ease-in-out;
+		   -moz-transition:  color .2s ease-in-out;
+		    -ms-transition:  color .2s ease-in-out;
+		     -o-transition:  color .2s ease-in-out;
+		        transition:  color .2s ease-in-out;
+    
+    -webkit-transition: background-color .2s ease-in-out;
+		   -moz-transition:  background-color .2s ease-in-out;
+		    -ms-transition:  background-color .2s ease-in-out;
+		     -o-transition:  background-color .2s ease-in-out;
+		        transition:  background-color .2s ease-in-out;
+    
+    -webkit-transition: border-color .2s ease-in-out;
+		   -moz-transition:  border-color .2s ease-in-out;
+		    -ms-transition:  border-color .2s ease-in-out;
+		     -o-transition:  border-color .2s ease-in-out;
+		        transition:  border-color .2s ease-in-out;
+}
+
+#icon{
+    padding: 0px 0px 0px 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.titleSpacing{
+    padding-top: 150px;
+}
+
+table.coolStuff{
+    margin: auto;
+    border-spacing: 50px;
+    border-collapse: separate;
+}
+
+td.flexin{
+    width: 200px;
+    height: 200px;
+    margin-right: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 40px;
+    font-weight: lighter;
+    letter-spacing: 4px;
+}
+
+.ch-item {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	cursor: default;
+	box-shadow: 
+		inset 0 0 0 16px rgba(255,255,255,0.6),
+		0 1px 2px rgba(0,0,0,0.1);
+	transition: all 0.4s ease-in-out;
+    box-shadow: 1px 1px 3px rgb(100, 100, 100);
+    
+}
+
+.ch-img-1 { 
+	background-image: url(https://i.pinimg.com/564x/11/d5/c0/11d5c0b8e52e11b41e0d5fa1cf704407--pattern-texture-surface-pattern.jpg);
+}
+
+.ch-img-2 { 
+	background-image: url(https://images.unsplash.com/photo-1512699057394-81542d1afef2?ixlib=rb-0.3.5&s=7fd723b9e7125bbb4c34e55012a6294e&dpr=1&auto=format&fit=crop&w=376&h=251&q=60&cs=tinysrgb);
+}
+
+.ch-img-3 { 
+	background-image: url(https://theultralinx.com/.image/t_share/MTQxOTUxNzg4NjIxMzA5NjM2/2iphoneiphone-wallpaperswallpapers1jpg.jpg);
+}
+
+.ch-colour-3:hover { 
+	background-color: rgba(119, 0, 255, 0.301);
+}
+
+.ch-colour-1:hover { 
+	background-color: rgba(57, 241, 64, 0.50);
+}
+    
+.ch-colour-2:hover { 
+	background-color: rgba(44, 153, 241, 0.5);
+}
+
+.ch-info {
+	vertical-align: middle;
+    text-align: center;
+	width: inherit;
+	height: inherit;
+	overflow: hidden;
+	opacity: 0;
+    border-radius: 50%;
+	transition: all 0.4s ease-in-out;
+    color: white;
+}
+
+p.fun{
+    padding-top: 30px;
+}
+
+.ch-item:hover {
+	box-shadow: 
+		inset 0 0 0 1px rgba(255,255,255,0.1),
+		0 1px 2px rgba(0,0,0,0.1);
+}
+
+.ch-item:hover .ch-info {
+	transform: scale(1);
+	opacity: 1;
+}
+
+div.goinUp{
+    margin-top: 30px;
+    font-size: 20px;
+    width: 100px;
+    margin: auto;
+    color: black;
+    letter-spacing: 3px;
+    padding: 15px 15px 15px 15px;
+    background-color: rgb(255, 255, 255);
+    border: solid 2px rgb(0, 0, 0);
+    text-transform: uppercase;
+     -webkit-transition: all .2s ease-in-out;
+		   -moz-transition:  all .2s ease-in-out;
+		    -ms-transition:  all .2s ease-in-out;
+		     -o-transition:  all .2s ease-in-out;
+		        transition:  all .2s ease-in-out;
+
+}
+
+a.goinUp:visited, a.goinUp:link{
+    text-decoration: none;
+    color: inherit;
+}
+
+div.goinUp:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(100, 100, 100);
+    color: white;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+.btn:hover{
+    border: 2px solid white !important;
+    color: white !important;
+    background-color: black !important;
+}
+
+  .btn {
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+    padding: 10px 30px;
+    /* border-radius: 8px; */
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-size: 16px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 60px;
+    /* width: 130px; */
+
+    -webkit-transition: all .2s ease-in-out;
+		   -moz-transition:  all .2s ease-in-out;
+		    -ms-transition:  all .2s ease-in-out;
+		     -o-transition:  all .2s ease-in-out;
+		        transition:  all .2s ease-in-out;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  .submit-btn-wrapper input[type=submit] {
+    font-size: 100px;
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  #glow{
+      box-shadow: 0px 0px 5px 3px #88888800;
+  }
+
+  .dogName{
+    float: left;
+    font-size: 25px;
+    color: lightcoral;
+    letter-spacing: 2px;
+    color: lightcoral;
+    text-decoration: none;
+
+    -webkit-transition: all .2s ease-in-out;
+		   -moz-transition:  all .2s ease-in-out;
+		    -ms-transition:  all .2s ease-in-out;
+		     -o-transition:  all .2s ease-in-out;
+		        transition:  all .2s ease-in-out;
+  }
+
+  .dogName:hover{
+    font-size: 26px;
+    color: dodgerblue;
+}
+
+.dogName:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+  .dogPercent{
+    float: right;
+    font-size: 25px;
+    color: black;
+
+    -webkit-transition: all .2s ease-in-out;
+		   -moz-transition:  all .2s ease-in-out;
+		    -ms-transition:  all .2s ease-in-out;
+		     -o-transition:  all .2s ease-in-out;
+		        transition:  all .2s ease-in-out;
+  }
+
+.dogPercent:hover{
+    font-size: 26px;
+    color: dodgerblue;
+}
+
+  .doggyResult{
+    width: 500px; 
+    margin: auto;
+    height: 40px;    
+}

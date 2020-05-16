@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="description" content=""> 
+        <meta name="author" content="Joshua Neizer">  
+        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <link rel="stylesheet" type="text/css" href="A3.css"> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="shortcut icon" href="https://images.baxterboo.com/global/images/products/large/dog-emoji-car-window-decal-7839.png">
+        <title>Dog ML Model.</title> 
+    </head>
+    <body onload="glow()">
+        <div id ="top">
+            <div id = "banner-cover">  
+                <div id = "titlebar">
+                    <div style="padding-left: 0px; padding: 25px 0px 0px 20px; float: left; color: black; font-weight: bold; font-size: 40px;">Dog ML Model.</div> 
+                    <table class="tb">
+                        <tr>
+                            <td class="titlebar"><a class ="titlebar" href="#one">Home</a></td>
+                            <td class="titlebar"><a class ="titlebar" href="#two">Doggy</a></td>
+                            <td class="titlebar"><a class ="titlebar" href="192.168.2.64/Files/server.php">Server</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <h1 id="two" style="font-size: 90px;font-weight: 300;margin-top: 40px;text-transform: uppercase;letter-spacing: 43px;">breed analyzer</h1>
+            <div>
+                <form action=".upload.php" method="post" enctype="multipart/form-data">
+                    <div style="width: 425px; margin: auto;">
+                        <div class="upload-btn-wrapper" style="float: left;">
+                            <button class="btn">Upload a Photo</button>
+                            <input type="file" name="fileToUpload" id="fileToUpload" />
+                        </div>
+                        <div class="submit-btn-wrapper" style = "float: right;">
+                            <button class="btn" id="glow">Submit</button>
+                            <input type="submit" value="Upload Image" name="submit">
+                        </div>
+                    </div>
+                </form>
+                <table class="coolStuff">
+                    <tr>
+                        <td class="flexin"><div class="ch-item ch-img-1"><div class="ch-info ch-colour-1"><p class="fun">&#223;</p></div></div></td>
+                        <td class="flexin"><div class="ch-item ch-img-2"><div class="ch-info ch-colour-2"><p class="fun">&#216;</p></div></div></td>
+                        <td class="flexin"><div class="ch-item ch-img-3"><div class="ch-info ch-colour-3"><p class="fun">&#215;</p></div></div></td>
+                    </tr>
+                </table>
+                <br>
+                <a href="#top" class="goinUp"><div class="goinUp">Top</div></a>
+            </div>
+        </div>
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+        <script>
+            
+            var button = document.getElementById("button"),
+                count = 3
+            
+            button.onclick = function(){
+                count += 1;
+                if (count == 5){
+                    count = 0
+                }
+                console.log(count);
+                if (count == 0){
+                     document.getElementById("top").style.background = "url(https://i.imgur.com/g10Md00.jpg)";
+                }
+                else if (count == 1){
+                     document.getElementById("top").style.background = "url(https://i.redd.it/ysy2156v0g901.jpg)";
+                }
+                else if (count == 2){
+                     document.getElementById("top").style.background = "url(https://i.redd.it/63dzo1sf34d01.jpg)";
+                }
+                else if (count == 3){
+                     document.getElementById("top").style.background = "url(https://i.redd.it/b5ba7dxxm1b01.jpg)";
+                }
+                else if (count == 4){
+                     document.getElementById("top").style.background = "url(https://images.unsplash.com/photo-1503058474900-cb76710f9cd1?)";
+                }
+                
+                document.getElementById("top").style.backgroundAttachment = "fixed";
+                document.getElementById("top").style.backgroundPosition = "100% 30%";
+                document.getElementById("top").style.backgroundRepeat = "no-repeat";
+                document.getElementById("top").style.backgroundSize = "cover";
+            };
+
+            function glow(){
+            window.setInterval( function(){
+                console.log(document.getElementById("fileToUpload").files.length)
+                if( document.getElementById("fileToUpload").files.length != 0 ){
+                    console.log("True")
+                    document.getElementById("glow").style.boxShadow = "0px 0px 5px 3px lightblue";
+                }
+            }, 500)}
+            
+            
+        </script>
+            
+        <script>
+          // Select all links with hashes
+            $('a[href*="#"]')
+              // Remove links that don't actually link to anything
+              .not('[href="#"]')
+              .not('[href="#0"]')
+              .click(function(event) {
+                // On-page links
+                if (
+                  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+                  && 
+                  location.hostname == this.hostname
+                ) {
+                  // Figure out element to scroll to
+                  var target = $(this.hash);
+                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                  // Does a scroll target exist?
+                  if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                      scrollTop: target.offset().top
+                    }, 1000, function() {
+                      // Callback after animation
+                      // Must change focus!
+                      var $target = $(target);
+
+                    });
+                  }
+                }
+      });
+
+      $(window).scroll(function () {
+  var s = $(window).scrollTop(),
+        d = $(document).height(),
+        c = $(window).height();
+        scrollPercent = (s / (d-c)) * 100;
+        var position = scrollPercent/100;
+        console.log(position)
+   $("#top").attr('style', "background: rgba(255, 255, 255, " + position + ");");
+
+});
+          //# sourceURL=pen.js
+
+
+        </script>
+        
+    </body>
+</html>
