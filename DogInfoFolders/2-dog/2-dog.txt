@@ -1,6 +1,0 @@
-                       breed      prob
-67        labrador_retriever  0.964763
-49          golden_retriever  0.023087
-90       rhodesian_ridgeback  0.006814
-28  chesapeake_bay_retriever  0.002109
-34    curly-coated_retriever  0.000742

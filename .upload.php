@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
@@ -14,37 +13,13 @@
 
         <script>   
             $(window).on('beforeunload', function() {
-                "<?php $server['ip'] = "192.168.2.64"; 	// IP des Servers
-                $server['sshport'] = 22;   		// SSH Port (Standart: 22)
-                $server['user'] = "pi"; 		// Benutzername
-                $server['pw'] = "room355"; 		// Passwort des Benutzers
-
-                $command = "cd /home/pi/html/.MLApp && sudo rm " . substr($fileName, 0, -4) . " -R";
-           
-
-                // ab hier wenn m�glich nichts mehr veraendern
-                if($ssh = ssh2_connect($server['ip'], $server['sshport'] )) {
-                    if(ssh2_auth_password($ssh, $server['user'], $server['pw'])) {
-                        $stream = ssh2_exec($ssh, $command);
-                        stream_set_blocking($stream, true);
-                        $data = '';
-                        while($buffer = fread($stream, 4096)) {
-                            $data .= $buffer;
-                        }
-                        fclose($stream);
-                        print $data;
-                    }else {
-                        echo "Fehler: Es konnte keine Verbindung zum ausgew&auml;hlten Server hergestellt werden. Benutzername oder Passwort falsch.";
-                    }
-                }else {
-                        echo "Fehler: Es konnte keine Verbindung zum ausgew&auml;hlten Server hergestellt werden. Server-IP oder SSH Port falsch.";
-                } ?>"
-            });
-            
-            
+                "<?php 
+                    $command = escapeshellcmd( 'cd /home/pi/html/.MLApp && sudo rm ' . substr($fileName, 0, -4) .  '-R');
+                    shell_exec($command);
+                ?>"
+            });     
         </script>
     </head>
-    <!-- onload="displayPic('<?php echo substr(basename($_FILES["fileToUpload"]["name"]), 0, -4) . "/" . basename($_FILES["fileToUpload"]["name"]); ?>')" -->
     <body id='one'>
         <div id ="top">
             <div id = "banner-cover">  
@@ -52,7 +27,7 @@
                     <div style="padding-left: 0px; padding: 25px 0px 0px 20px; float: left; color: black; font-weight: bold; font-size: 40px;">Dog ML Model.</div> 
                     <table class="tb">
                         <tr>
-                            <td class="titlebar"><a class ="titlebar" href="http://localhost/.MLApp">Home</a></td>
+                            <td class="titlebar"><a class ="titlebar" href="./index.html">Home</a></td>
                             <td class="titlebar"><a class ="titlebar" href="#two">Results</a></td>
                             <td class="titlebar"><a class ="titlebar" href="#one">Top</a></td>
                         </tr>
@@ -95,8 +70,8 @@
                     $uploadOk = 0;
                 }
                 // Allow certain file formats
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "gif" ) {
-                    echo "Sorry, only JPG, PNG & GIF files are allowed.";
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                     $uploadOk = 0;
                 }
                 // Check if $uploadOk is set to 0 by an error
@@ -111,34 +86,18 @@
                     }
                 }
 
-                $server['ip'] = "localhost"; 	// IP des Servers
-                $server['sshport'] = 22;   		// SSH Port (Standart: 22)
-                $server['user'] = "pi"; 		// Benutzername
-                $server['pw'] = "room355"; 		// Passwort des Benutzers
-
                 $fileName = basename( $_FILES["fileToUpload"]["name"]);  
 
-                $command = " sh ~/html/.MLApp/script.sh ". $fileName ." ". substr($fileName, 0, -4); 
+                $command = 'whoami';
+                $output = shell_exec($command);
+                echo($output);
+                echo nl2br("<br>");
+                $command = 'bash script.sh "' . $fileName . '" "' . substr($fileName, 0, -4) .'"';
+                $output = shell_exec($command);
+                echo($command);
+                echo nl2br("<br>");
+                echo($output);
            
-
-                // ab hier wenn m�glich nichts mehr veraendern
-                if($ssh = ssh2_connect($server['ip'], $server['sshport'] )) {
-                    if(ssh2_auth_password($ssh, $server['user'], $server['pw'])) {
-                        $stream = ssh2_exec($ssh, $command);
-                        stream_set_blocking($stream, true);
-                        $data = '';
-                        while($buffer = fread($stream, 4096)) {
-                            $data .= $buffer;
-                        }
-                        fclose($stream);
-                        print $data;
-                    }else {
-                        echo "Fehler: Es konnte keine Verbindung zum ausgew&auml;hlten Server hergestellt werden. Benutzername oder Passwort falsch.";
-                    }
-                }else {
-                        echo "Fehler: Es konnte keine Verbindung zum ausgew&auml;hlten Server hergestellt werden. Server-IP oder SSH Port falsch.";
-                }
-
                 $textFile = "DogInfoFolders/" . substr($fileName, 0, -4) . "/" . substr($fileName, 0, -4) . "_New.txt";
                 $myfile = fopen($textFile, "r") or die("Unable to open file!");               
                 if ($myfile) {
@@ -151,60 +110,46 @@
                     echo nl2br("<br>");
                     fclose($myfile);
                 } else {
-                    // error opening the file.
+                    console.log('ERROR: error opening the file.');
                 } 
             ?>
         <div id="two"></div>
         </div>
-        
-        
-        
             
         <script>
-          // Select all links with hashes
+            // Smooth scrolling function
             $('a[href*="#"]')
-              // Remove links that don't actually link to anything
-              .not('[href="#"]')
-              .not('[href="#0"]')
-              .click(function(event) {
-                // On-page links
+            .not('[href="#"]')
+            .not('[href="#0"]')
+            .click(function(event) {
                 if (
-                  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-                  && 
-                  location.hostname == this.hostname
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+                && 
+                location.hostname == this.hostname
                 ) {
-                  // Figure out element to scroll to
-                  var target = $(this.hash);
-                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                  // Does a scroll target exist?
-                  if (target.length) {
-                    // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
-                    $('html, body').animate({
-                      scrollTop: target.offset().top
-                    }, 1000, function() {
-                      // Callback after animation
-                      // Must change focus!
-                      var $target = $(target);
-
-                    });
-                  }
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        event.preventDefault();
+                        $('html, body').animate({
+                        scrollTop: target.offset().top
+                        }, 1000, function() {
+                            var $target = $(target);
+                        });
+                    }
                 }
-      });
+            });
 
-      $(window).scroll(function () {
-  var s = $(window).scrollTop(),
-        d = $(document).height(),
-        c = $(window).height();
-        scrollPercent = (s / (d-c)) * 100;
-        var position = scrollPercent/100;
-        console.log(position)
-   $("#top").attr('style', "background: rgba(255, 255, 255, " + position + ");");
-
-});
-          //# sourceURL=pen.js
-
-
+            // Changing nav bar colour
+            $(window).scroll(function () {
+                var s = $(window).scrollTop(),
+                        d = $(document).height(),
+                        c = $(window).height();
+                        scrollPercent = (s / (d-c)) * 100;
+                        var position = scrollPercent/100;
+                        console.log(position)
+                $("#top").attr('style', "background: rgba(255, 255, 255, " + position + ");");
+            });
         </script>
         
     </body>

@@ -1,5 +1,0 @@
-Labrador Retriever 96.48%
-Golden Retriever 2.31%
-Rhodesian Ridgeback 0.68%
-Chesapeake Bay Retriever 0.21%
-Curly-coated Retriever 0.07%
